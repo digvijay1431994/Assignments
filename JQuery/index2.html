@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #slider{
+            width: 400px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        #slider img{
+            width: 700px;
+            height: 500px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <img src="dandelion-445228.jpg" alt="">
+        <img src="raindrops-574971.jpg" alt="">
+        <img src="splashing-165192_1920.jpg" alt="">
+    </div>
+    <script>
+         $(document).ready(function() {
+            var currentSlide =0;
+            function ShowNextSlide() {
+                $('#slider img').eq(currentSlide).fadeOut();
+                currentSlide = (currentSlide +1) % $('#slider img'). length;
+                $('#slider img').eq(currentSlide).fadeIn();
+            }
+            setInterval(ShowNextSlide, 2000);
+        })
+    </script>
+</body>
+</html>

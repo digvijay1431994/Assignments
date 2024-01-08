@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .seenu{
+            display: block;
+            border: 2px solid rgb(206, 15, 15);
+            color: rgb(22, 111, 141);
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="seenu">grandparent
+        <ul>parent
+            <li>child
+                <span></span>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+     $(document).ready(function() {
+        $("span").parents().css({"color":"blue","border":"solid 2px yellow"})
+     })
+</script>
+</html>
